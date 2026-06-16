@@ -1,31 +1,31 @@
-const reclamacao = document.getElementById("reclamacao");
-const sugestao = document.getElementById("sugestao");
+const reclamacao=document.getElementById("reclamacao");
+const sugestao=document.getElementById("sugestao");
+const contadorReclamacao=document.getElementById("contadorReclamacao");
+const contadorSugestao=document.getElementById("contadorSugestao");
+const popup=document.getElementById("popup");
+const fechar=document.getElementById("fecharPopup");
 
-const contadorReclamacao = document.getElementById("contadorReclamacao");
-const contadorSugestao = document.getElementById("contadorSugestao");
-
-reclamacao.addEventListener("input", function () {
-    contadorReclamacao.textContent = reclamacao.value.length + "/300";
+if(reclamacao&&contadorReclamacao){
+reclamacao.addEventListener("input",function(){
+contadorReclamacao.textContent=reclamacao.value.length+"/300";
 });
+}
 
-sugestao.addEventListener("input", function () {
-    contadorSugestao.textContent = sugestao.value.length + "/300";
+if(sugestao&&contadorSugestao){
+sugestao.addEventListener("input",function(){
+contadorSugestao.textContent=sugestao.value.length+"/300";
 });
+}
 
-const botao = document.querySelector(".btn-feedback");
-const popup = document.getElementById("popup");
-const fechar = document.getElementById("fecharPopup");
+if(window.location.search.includes("sucesso=1")&&popup){
+setTimeout(function(){
+popup.style.display="flex";
+history.replaceState({},document.title,"index.html");
+},1000);
+}
 
-botao.addEventListener("click", function () {
-    popup.style.display = "flex";
-
-    reclamacao.value = "";
-    sugestao.value = "";
-
-    contadorReclamacao.textContent = "0/300";
-    contadorSugestao.textContent = "0/300";
+if(fechar&&popup){
+fechar.addEventListener("click",function(){
+popup.style.display="none";
 });
-
-fechar.addEventListener("click", function () {
-    popup.style.display = "none";
-});
+}

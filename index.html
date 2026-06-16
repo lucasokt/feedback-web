@@ -20,71 +20,89 @@
         </section>
 
         <div class="painel">
-            <section class="feedback-section">
-                <div class="cards">
 
-                    <div class="card">
-                        <img class="seta" src="imagem/seta.svg" alt="Expandir">
+            <form action="salvar_feedback.php" method="POST">
 
-                        <div class="card-topo">
-                            <img class="icone-card" src="imagem/balao.svg" alt="Ícone de reclamação">
+                <section class="feedback-section">
+                    <div class="cards">
 
-                            <div class="card-info">
-                                <h3>Reclamação</h3>
-                                <p>Relate problemas que você encontrou no transporte ou no app.</p>
+                        <div class="card">
+                            <img class="seta" src="imagem/seta.svg" alt="Expandir">
+
+                            <div class="card-topo">
+                                <img class="icone-card" src="imagem/balao.svg" alt="Ícone de reclamação">
+
+                                <div class="card-info">
+                                    <h3>Reclamação</h3>
+                                    <p>Relate problemas que você encontrou no transporte ou no app.</p>
+                                </div>
                             </div>
+
+                            <textarea id="reclamacao" name="mensagem" maxlength="300" placeholder="Descreva sua reclamação aqui..."></textarea>
+
+                            <input type="hidden" name="tipo" value="Reclamação">
+
+                            <p id="contadorReclamacao">0/300</p>
                         </div>
 
-                        <textarea id="reclamacao" maxlength="300" placeholder="Descreva sua reclamação aqui..."></textarea>
-                        <p id="contadorReclamacao">0/300</p>
-                    </div>
+                        <div class="card">
+                            <img class="seta" src="imagem/seta.svg" alt="Expandir">
 
-                    <div class="card">
-                        <img class="seta" src="imagem/seta.svg" alt="Expandir">
+                            <div class="card-topo">
+                                <img class="icone-card" src="imagem/Lampada.svg" alt="Ícone de sugestão">
 
-                        <div class="card-topo">
-                            <img class="icone-card" src="imagem/Lampada.svg" alt="Ícone de sugestão">
-
-                            <div class="card-info">
-                                <h3>Sugestão</h3>
-                                <p>Envie suas ideias para melhorarmos o serviço e o app.</p>
+                                <div class="card-info">
+                                    <h3>Sugestão</h3>
+                                    <p>Envie suas ideias para melhorarmos o serviço e o app.</p>
+                                </div>
                             </div>
+
+                            <textarea id="sugestao" maxlength="300" placeholder="Descreva sua sugestão aqui..."></textarea>
+
+                            <p id="contadorSugestao">0/300</p>
                         </div>
 
-                        <textarea id="sugestao" maxlength="300" placeholder="Descreva sua sugestão aqui..."></textarea>
-                        <p id="contadorSugestao">0/300</p>
+                    </div>
+                </section>
+
+                <section class="form-footer">
+                    <div class="categoria-area">
+                        <label>Categoria (Opcional)</label>
+
+                        <select class="categoria" name="categoria">
+                            <option value="">Selecione uma categoria</option>
+                            <option value="Aplicativo">Aplicativo</option>
+                            <option value="Motorista">Motorista</option>
+                            <option value="Ônibus">Ônibus</option>
+                            <option value="Atendimento">Atendimento</option>
+                            <option value="Outro">Outro</option>
+                        </select>
                     </div>
 
-                </div>
-            </section>
+                    <div class="botao-area">
+                        <button type="submit" class="btn-feedback">
+                            <img class="icone-aviao" src="imagem/aviao.svg" alt="Enviar">
+                            Enviar Feedback
+                        </button>
 
-            <section class="form-footer">
-                <div class="categoria-area">
-                    <label>Categoria (Opcional)</label>
-                    <select class="categoria">
-                        <option>Selecione uma categoria</option>
-                    </select>
-                </div>
+                        <p>Agradecemos sua contribuição!</p>
+                    </div>
+                </section>
 
-                <div class="botao-area">
-                    <button class="btn-feedback">
-                        <img class="icone-aviao" src="imagem/aviao.svg" alt="Enviar">
-                        Enviar Feedback
-                    </button>
-                    <p>Agradecemos sua contribuição!</p>
-                </div>
-            </section>
+            </form>
+
         </div>
     </main>
 
     <div id="popup" class="popup">
         <div class="popup-box">
-            <h2>🎉 Feedback enviado!</h2>
+            <h2>Feedback enviado!</h2>
             <p>Obrigado pela sua contribuição! Seu feedback foi enviado com sucesso e nos ajudará a melhorar o VamBora Penedo.</p>
             <button id="fecharPopup">Fechar</button>
         </div>
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
