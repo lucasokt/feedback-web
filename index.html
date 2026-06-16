@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="imagem/logo-vambora.svg" alt="Logo do VamBora">
+    </header>
+
+    <main>
+        <section class="hero">
+            <img class="hero-img" src="imagem/balao1.svg" alt="Ícone de conversa">
+            <div class="hero-text">
+                <h2>Queremos te ouvir!</h2>
+                <p>Sua opinião ajuda a melhorar o VamBora Penedo.</p>
+            </div>
+        </section>
+
+        <div class="painel">
+            <section class="feedback-section">
+                <div class="cards">
+
+                    <div class="card">
+                        <img class="seta" src="imagem/seta.svg" alt="Expandir">
+
+                        <div class="card-topo">
+                            <img class="icone-card" src="imagem/balao.svg" alt="Ícone de reclamação">
+
+                            <div class="card-info">
+                                <h3>Reclamação</h3>
+                                <p>Relate problemas que você encontrou no transporte ou no app.</p>
+                            </div>
+                        </div>
+
+                        <textarea id="reclamacao" maxlength="300" placeholder="Descreva sua reclamação aqui..."></textarea>
+                        <p id="contadorReclamacao">0/300</p>
+                    </div>
+
+                    <div class="card">
+                        <img class="seta" src="imagem/seta.svg" alt="Expandir">
+
+                        <div class="card-topo">
+                            <img class="icone-card" src="imagem/Lampada.svg" alt="Ícone de sugestão">
+
+                            <div class="card-info">
+                                <h3>Sugestão</h3>
+                                <p>Envie suas ideias para melhorarmos o serviço e o app.</p>
+                            </div>
+                        </div>
+
+                        <textarea id="sugestao" maxlength="300" placeholder="Descreva sua sugestão aqui..."></textarea>
+                        <p id="contadorSugestao">0/300</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="form-footer">
+                <div class="categoria-area">
+                    <label>Categoria (Opcional)</label>
+                    <select class="categoria">
+                        <option>Selecione uma categoria</option>
+                    </select>
+                </div>
+
+                <div class="botao-area">
+                    <button class="btn-feedback">
+                        <img class="icone-aviao" src="imagem/aviao.svg" alt="Enviar">
+                        Enviar Feedback
+                    </button>
+                    <p>Agradecemos sua contribuição!</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="popup" class="popup">
+        <div class="popup-box">
+            <h2>🎉 Feedback enviado!</h2>
+            <p>Obrigado pela sua contribuição! Seu feedback foi enviado com sucesso e nos ajudará a melhorar o VamBora Penedo.</p>
+            <button id="fecharPopup">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
